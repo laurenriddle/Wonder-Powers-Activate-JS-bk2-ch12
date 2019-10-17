@@ -40,6 +40,7 @@ for (let i = 0; i < disableAllSections.length; i++) {
    }
 }
 
+
 // this function and event listener adds the class of enabled from all sections and removes a class of disabled
 
 document.querySelector("#activate-all").addEventListener("click", enableAll)
