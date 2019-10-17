@@ -1,10 +1,5 @@
-
-const id = "#activate-flight #activate-mindreading #activate-xray"
-console.log(id.split(' '))
-
 function activateButton (sectionID) {
-    const buttonID = event.target.id.split("#activate-flight #activate-mindreading #activate-xray")
-    console.log(buttonID[0])
+
     function buttons (constName) {
         constName.classList.remove("disabled")
         constName.classList.add("enabled")
