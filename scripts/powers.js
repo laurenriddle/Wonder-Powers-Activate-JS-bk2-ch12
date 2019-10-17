@@ -1,30 +1,32 @@
-// this function and event listener puts a class of enabled on the flight section when the button is clicked
-document.querySelector("#activate-flight").addEventListener("click", flightHandlerFunction)
 
-const flightSection = document.querySelector("#flight")
+const id = "#activate-flight #activate-mindreading #activate-xray"
+console.log(id.split(' '))
 
-function flightHandlerFunction () {
-    flightSection.classList.remove("disabled")
-    flightSection.classList.add("enabled")
+function activateButton (sectionID) {
+    const buttonID = event.target.id.split("#activate-flight #activate-mindreading #activate-xray")
+    console.log(buttonID[0])
+    function buttons (constName) {
+        constName.classList.remove("disabled")
+        constName.classList.add("enabled")
+    }
+buttons(document.querySelector(sectionID))
 }
+
+// this function and event listener puts a class of enabled on the flight section when the button is clicked
+document.querySelector("#activate-flight").addEventListener("click", function flight () {
+    activateButton("#flight")
+})
+
 
 // this function and event listener puts a class of enabled on the mind reading section when the button is clicked
-document.querySelector("#activate-mindreading").addEventListener("click", mindReadingHandlerFunction)
-
-const mindReadingSection = document.querySelector("#mindreading")
-function mindReadingHandlerFunction () {
-    mindReadingSection.classList.remove("disabled")
-    mindReadingSection.classList.add("enabled")
-}
+document.querySelector("#activate-mindreading").addEventListener("click", function mindReading () {
+    activateButton("#mindreading")
+})
 
 // this function and event listener puts a class of enabled on the xray section when the button is clicked
-document.querySelector("#activate-xray").addEventListener("click", xrayHandlerFunction)
-
-const xraySection = document.querySelector("#xray")
-function xrayHandlerFunction () {
-    xraySection.classList.remove("disabled")
-    xraySection.classList.add("enabled")
-}
+document.querySelector("#activate-xray").addEventListener("click", function xray () {
+    activateButton("#xray")
+})
 
 
 
